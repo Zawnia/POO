@@ -57,3 +57,14 @@ int Date::getMonth() {
 int Date::getYear() {
     return year;
 }
+
+bool estAvant(Date d1, Date d2) {
+    if (d1.getYear() != d2.getYear()) {
+        return d1.getYear() < d2.getYear();
+    }
+    if (d1.getMonth() != d2.getMonth()) {
+        return d1.getMonth() < d2.getMonth();
+    }
+    return d1.getDay() < d2.getDay();
+}
+
