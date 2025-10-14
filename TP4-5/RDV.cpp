@@ -83,6 +83,27 @@ void RDV::setparticipant(int i, std::string s) {
     }
 }
 
+Date RDV::getDate() {
+    return date;
+}
+Heure RDV::getHeure() {
+    return heure;
+}
+std::string RDV::getLieu() {
+    return lieu;
+}
+
+void est_compatible(RDV& r1, RDV& r2){
+    if (r1.getDate().getDay() == r2.getDate().getDay() && r1.getDate().getMonth() == r2.getDate().getMonth() && r1.getDate().getYear() == r2.getDate().getYear()) {
+        if (r1.getHeure().getHeure() == r2.getHeure().getHeure()) {
+            std::cout << "Les rendez-vous sont incompatibles (meme date et heure)" << std::endl;
+        } else {
+            std::cout << "Les rendez-vous sont compatibles (meme date mais heure differente)" << std::endl;
+        }
+    } else {
+        std::cout << "Les rendez-vous sont compatibles (date differente)" << std::endl;
+    }
+}
 
 
 

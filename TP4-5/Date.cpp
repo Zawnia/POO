@@ -57,5 +57,3 @@ int Date::getMonth() {
 int Date::getYear() {
     return year;
 }
-
-
