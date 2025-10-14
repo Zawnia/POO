@@ -8,6 +8,46 @@ bool Heure::checkHour(int h, int m) {
     return true;
 }
 
+Heure::Heure(int h, int m) {
+    if (checkHour(h, m)) {
+        heure = h; minute = m;
+    } else {
+        heure = 0; minute = 0;
+    }
+}
+
+Heure::Heure() {
+    heure = 0;
+    minute = 0;
+}
+
+void Heure::affiche() {
+    std::cout << heure << "h" << minute << std::endl;
+}
+
+void Heure::setHeure(int h) {
+    if (checkHour(h, minute)) {
+        heure = h;
+    }
+}
+
+void Heure::setMinute(int a) {
+    if (checkHour(heure, a)) {
+        minute = a;
+    }
+}
+
+int Heure::getHeure() {
+    return heure;
+}
+
+int Heure::getMinute() {
+    return minute;
+}
+
+
+
+
 
 
 
