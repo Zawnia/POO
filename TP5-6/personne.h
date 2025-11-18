@@ -6,7 +6,7 @@ class Personne
 {
     // Classe virtuelle car destinée à être héritée.
 
-private:
+protected:
     std::string nom;
     std::string prenom;
     std::string adresse;
@@ -18,10 +18,10 @@ public:
              const std::string &adresse = "", const std::string &telephone = "");
 
     // Destructeur
-    virtual ~Personne() {}
+    ~Personne() {}
 
     // Méthodes
-    virtual void affiche() const;
+    void affiche() const;
 
     std::string getNom() const;
     std::string getPrenom() const;
