@@ -9,13 +9,10 @@ Personne::Personne()
     telephone = "";
 }
 
-Personne::Personne(const std::string &surname, const std::string &name,
-                   const std::string &adress = "", const std::string &phone = "")
+Personne::Personne(const std::string& nom, const std::string& prenom, 
+                   const std::string& adresse, const std::string& telephone)
+    : nom(nom), prenom(prenom), adresse(adresse), telephone(telephone)
 {
-    nom = surname;
-    prenom = name;
-    adresse = adress;
-    telephone = phone;
 }
 
 void Personne::affiche() const

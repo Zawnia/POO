@@ -2,10 +2,12 @@
 #include "eleve.h"
 #include <iostream>
 
-Eleve::Eleve(const std::string &surname, const std::string &name,const std::string &adress, const std::string &phone) 
+Eleve::Eleve(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone, const std::string &promotion, const std::string &groupeDeTd, float &gpa)
 {
-    Personne(surname, name, adress, phone);
-
+    Personne(nom, prenom, adresse, telephone);
+    this->promotion = promotion;
+    this->groupeDeTd = groupeDeTd;
+    this->gpa = gpa;
 }
 
              
@@ -29,7 +31,6 @@ std::string Eleve::getGroupeDeTd() const
 {
     return groupeDeTd;
 }
-
 
 void Eleve::setPromotion(const std::string &prom)
 {
