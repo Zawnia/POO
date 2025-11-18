@@ -5,7 +5,7 @@
 
 class Eleve  : public Personne
 {
-    // Classe virtuelle car destinée à être héritée.
+    // Classe réelle avec des instances d'éleves.
 
 private:
     std::string promotion;
@@ -23,14 +23,13 @@ public:
     // Méthodes
     virtual void affiche() const;
 
-    std::string getNom() const;
-    std::string getPrenom() const;
-    std::string getAdresse() const;
-    std::string getTelephone() const;
+    std::string getPromotion() const;
+    float getGpa() const;
+    std::string getGroupeDeTd() const;
 
     void setPromotion(const std::string &promotion);
     void setGroupeDeTd(const std::string &groupeDeTd);
-    void setGpa(float gpa);
+    void setGpa(float &note);
 };
 
 #endif // ELEVE_H

@@ -1,6 +1,14 @@
 #include "personne.h"
 #include <iostream>
 
+Personne::Personne()
+{
+    nom = "Nom";
+    prenom = "Prenom";
+    adresse = "";
+    telephone = "";
+}
+
 Personne::Personne(const std::string &surname, const std::string &name,
                    const std::string &adress = "", const std::string &phone = "")
 {
