@@ -2,7 +2,7 @@
 #include "eleve.h"
 #include <iostream>
 
-Eleve::Eleve(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone, const std::string &promotion, const std::string &groupeDeTd, float &gpa)
+Eleve::Eleve(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone, const std::string &promotion, const std::string &groupeDeTd, float gpa)
 {
     Personne(nom, prenom, adresse, telephone);
     this->promotion = promotion;

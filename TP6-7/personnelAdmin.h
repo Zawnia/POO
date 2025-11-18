@@ -15,7 +15,7 @@ public:
     PersonnelAdmin();
     PersonnelAdmin(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "");
 
-    float calculSalaire();
+    float calculSalaire() const; //salaire + (heureSup * taux)
     void affiche();
 
 

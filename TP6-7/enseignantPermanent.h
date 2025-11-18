@@ -16,7 +16,7 @@ public:
     EnseignantPermanent();
     EnseignantPermanent(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "");
 
-    float calculSalaire(); //salaire + (grade * primeMensuelle) / 100
+    float calculSalaire() const; //salaire + (grade * primeMensuelle) / 100
     void affiche();
 
     std::string getBureau() const;

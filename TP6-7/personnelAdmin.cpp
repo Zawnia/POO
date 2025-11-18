@@ -7,7 +7,7 @@ PersonnelAdmin::PersonnelAdmin(const std::string &nom, const std::string &prenom
     taux = 0.0f;
 }
 
-float PersonnelAdmin::calculSalaire()
+float PersonnelAdmin::calculSalaire() const
 {
     return salaire + (heureSup * taux);
 }

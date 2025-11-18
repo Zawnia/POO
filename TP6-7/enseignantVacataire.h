@@ -16,7 +16,7 @@ public:
     EnseignantVacataire();
     EnseignantVacataire(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "");
 
-    float calculSalaire(); //taux * nbreHeures
+    float calculSalaire() const; //taux * nbreHeures
     void affiche();
 
     std::string getcasier() const;

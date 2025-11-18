@@ -4,7 +4,7 @@
 #include "personne.h"
 #include "eleve.h"
 
-class Personnel : public Personne //Classe "abstraite"
+class Personnel : public Personne //Classe mère de tous le personnel de l'école
 {
 
 protected:
@@ -15,7 +15,7 @@ public:
     Personnel();
     Personnel(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "", const float &salaire = 0.0f);
 
-    float calculSalaire();
+    virtual float calculSalaire() const;
 
     void setSalaire(float salaire);
     float getSalaire() const;

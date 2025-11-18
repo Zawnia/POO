@@ -8,7 +8,7 @@ EnseignantPermanent::EnseignantPermanent(const std::string &nom, const std::stri
     primeMensuelle = 0.0f;
 }
 
-float EnseignantPermanent::calculSalaire()
+float EnseignantPermanent::calculSalaire() const
 {
     return salaire + (grade * primeMensuelle) / 100;
 }

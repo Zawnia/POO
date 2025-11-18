@@ -8,7 +8,7 @@ EnseignantVacataire::EnseignantVacataire(const std::string &nom, const std::stri
     taux = 0.0f;
 }
 
-float EnseignantVacataire::calculSalaire()
+float EnseignantVacataire::calculSalaire() const
 {
     return nbreHeures * taux;
 }

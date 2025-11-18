@@ -22,7 +22,7 @@ public:
     ~Personne() {}
 
     // Méthodes
-    void affiche() const;
+    virtual void affiche() const;
 
     std::string getNom() const;
     std::string getPrenom() const;
