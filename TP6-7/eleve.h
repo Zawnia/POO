@@ -14,8 +14,7 @@ private:
 
 public:
     // Constructeur
-    Eleve(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "", const std::string &promotion,
-    const std::string &groupeDeTd, float &gpa);
+    Eleve(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "", const std::string &promotion = "1A", const std::string &groupeDeTd = "1", float gpa = 3.00f);
 
     // Destructeur
     virtual ~Eleve() {}

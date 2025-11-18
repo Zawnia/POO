@@ -4,7 +4,7 @@
 #include "personne.h"
 #include "eleve.h"
 
-class Personnel : public Personne
+class Personnel : public Personne //Classe "abstraite"
 {
 
 protected:
@@ -13,7 +13,7 @@ protected:
 public:
     //Constructeurs
     Personnel();
-    Personnel(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "");
+    Personnel(const std::string &nom, const std::string &prenom, const std::string &adresse = "", const std::string &telephone = "", const float &salaire = 0.0f);
 
     float calculSalaire();
 

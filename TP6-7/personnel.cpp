@@ -1,9 +1,10 @@
 #include "personnel.h"
+#include "personne.h"
 #include <iostream>
 
-Personnel::Personnel(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone) : Personne(nom, prenom, adresse, telephone)
+Personnel::Personnel(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone, const float &salaire) : Personne(nom, prenom, adresse, telephone)
 {
-    salaire = 0.0f;
+    this->salaire = salaire;
 }
 
 float Personnel::calculSalaire()
