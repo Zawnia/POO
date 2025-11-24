@@ -20,17 +20,14 @@ Agenda::Agenda(const Agenda& autre) {
 }
 
 void Agenda::ajoute(RDV r){
-    /*ajoute un rendez-vous en respectant l’ordre chronologique basé sur la date*/
     NoeudRDV* nouveau = new NoeudRDV(r);
     NoeudRDV* current = premier;
 
-    /* Cas vide*/
     if (premier == nullptr){
         premier = nouveau;
         return;
     }
 
-    /*Cas premier*/
     if (estAvant(r.getDate(), premier->getRdv().getDate())) {
         nouveau->setSuivant(premier);
         premier = nouveau;

@@ -6,6 +6,11 @@ Personnel::Personnel(const std::string &nom, const std::string &prenom, const st
     this->salaire = salaire;
 }
 
+Personnel::Personnel() : Personne() 
+{
+    salaire = 0.0f;
+}
+
 float Personnel::calculSalaire() const
 {
     return salaire;

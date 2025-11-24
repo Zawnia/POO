@@ -4,6 +4,8 @@
 ListePersonnel::ListePersonnel()
 {
     nb = 0;
+    tailleMax = 2; 
+    tab = new Personnel*[tailleMax]; 
 }
 
 ListePersonnel::~ListePersonnel()
@@ -12,19 +14,19 @@ ListePersonnel::~ListePersonnel()
     {
         delete tab[i];
     }
+    
+    delete[] tab;
 }
 
-void ListePersonnel::ajoutPersonnel(Personnel *ptPersonnel)
+void ListePersonnel::ajoutPersonnel(Personnel* p)
 {
-    if (nb < 100)
+    if (nb >= tailleMax)
     {
-        tab[nb] = ptPersonnel;
-        nb++;
+        doubleTableau();
     }
-    else
-    {
-        std::cout << "La liste de personnel est pleine." << std::endl;
-    }
+
+    tab[nb] = p;
+    nb++;
 }
 
 void ListePersonnel::afficherSalaires() const
@@ -34,3 +36,25 @@ void ListePersonnel::afficherSalaires() const
         std::cout << tab[i]->getPrenom() << " " << tab[i]->getNom() << ": " << tab[i]->calculSalaire() << std::endl; // On remonte carrément au getPrenom de Personne !
     }
 }
+
+void ListePersonnel::doubleTableau()
+{
+
+    int nouvelleTaille = tailleMax * 2;
+    Personnel** nouveauTab = new Personnel*[nouvelleTaille];
+
+    for (int i = 0; i < nb; ++i)
+    {
+        nouveauTab[i] = tab[i];
+    }
+
+    delete[] tab;
+
+    tab = nouveauTab;
+    tailleMax = nouvelleTaille;
+    
+    std::cout << "--> Redimensionnement du tableau : " << tailleMax << " places." << std::endl;
+}
+
+
+

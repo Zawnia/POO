@@ -1,7 +1,15 @@
 #include "enseignantPermanent.h"
 #include <iostream>
 
-EnseignantPermanent::EnseignantPermanent(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone) : Personnel(nom, prenom, adresse, telephone)
+EnseignantPermanent::EnseignantPermanent() : Personnel()
+{
+    bureau = "";
+    grade = 0;
+    primeMensuelle = 0.0f;
+}
+
+EnseignantPermanent::EnseignantPermanent(const std::string &nom, const std::string &prenom, const std::string &adresse, const std::string &telephone) 
+    : Personnel(nom, prenom, adresse, telephone, 0.0f) // On initialise à 0 par défaut
 {
     bureau = "";
     grade = 0;
@@ -11,6 +19,7 @@ EnseignantPermanent::EnseignantPermanent(const std::string &nom, const std::stri
 float EnseignantPermanent::calculSalaire() const
 {
     return salaire + (grade * primeMensuelle) / 100;
+    
 }
 
 void EnseignantPermanent::affiche()
@@ -48,3 +57,4 @@ void EnseignantPermanent::setPrimeMensuelle(float p)
 {
     primeMensuelle = p;
 }
+

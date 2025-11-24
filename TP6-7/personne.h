@@ -19,7 +19,7 @@ public:
              const std::string &adresse = "", const std::string &telephone = "");
 
     // Destructeur
-    ~Personne() {}
+    virtual ~Personne() {}
 
     // Méthodes
     virtual void affiche() const;

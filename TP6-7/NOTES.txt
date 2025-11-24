@@ -1,0 +1,17 @@
+Question supplémentaire du Dm : IMPLÉMENTATION avec vs sans pointeurs
+
+J'ai implémenté deux listes dans le fichier main.cpp pour comparer les comportements :
+1. ListePersonnel  : Tableau de pointeurs (Personnel* tab[])
+2. ListeValeur : Tableau d'objets (Personnel tab[])
+
+Observations :
+- Avec les pointeurs : Le polymorphisme fonctionne bien comme on veut. La méthode calculSalaire() appelée est celle de la fille, donnant le bon salaire.
+- Sans pointeurs (Objets) : Il y a un phénomène de la troncature. Lorsqu'on ajoute un EnseignantVacataire dans un tableau de type Personnel, l'objet est copié et coupé cad qu'il perd ses attributs spécifiques (taux, heures) et devient un simple objet Personnel. Le salaire calculé est donc faux (salaire de base uniquement).
+
+
+
+Question 10 du TP : Classe Abstraite
+
+Pour empêcher le problème observé ci-dessus (Slicing), la Question 10 demande de rendre la méthode calculSalaire() virtuelle pure (en ajoutant = 0 ). Cela rendrait la classe Personnel "Abstraite" cad impossible a instancier.
+Conséquence : Le compilateur interdirait alors la création du tableau "Personnel tab[100]" utilisé dans listeValeurs, car on ne peut pas instancier une classe abstraite.
+C'est donc selon moi un genre de sécurité pour forcer l'utilisation des pointeurs.
